@@ -1,0 +1,9 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+	Options +FollowSymLinks
+	RewriteCond %{HTTP_HOST} ^www\.streetadv\.com$ [NC]
+    RewriteRule ^(.*)$ http://streetadv.com/$1 [R=301,L]
+	
+    RewriteCond %{REQUEST_URI} !^public
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>

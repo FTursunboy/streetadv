@@ -34,7 +34,6 @@ class AdminController extends Controller
             }
         }
 
-
         $arrData = [];
         if (count($oQuestUser) > 0) {
             foreach ($oQuestUser as $item) {
@@ -79,7 +78,7 @@ class AdminController extends Controller
                     $discount = isset($promoCodesDisc->discount) ? $promoCodesDisc->discount : "na";
                     if ($oUserPromocode && $oQuest->access == 'promocode' && $discount != "na") {
                         $boughtStatus = 'Куплен по скидке';
-                    } 
+                    }
 		    else if ($oUserPromocode && $oQuest->access == 'all') {
                         $boughtStatus = 'Ввод промокода';
                     }

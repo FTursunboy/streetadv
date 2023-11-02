@@ -11,6 +11,8 @@
 |
 */
 // Index routes
+use Illuminate\Support\Facades\Route;
+
 Route::group(['middleware' => ['web']], function () {
     Route::get('/addPromo', 'BaseController@addPromo');
     Route::get('/apple-app-site-association', 'BaseController@showIosFile');

@@ -36,7 +36,9 @@ class AdminCategoriesController extends Controller
             $data['obj'] = Category::where('categoryID', $categoryID)->first();
         }
 
+
         // Запись данных в базу
+
         if ($request->method() == "POST") {
             if (isset($request['categoryID'])) {
                 // Обновление данных
@@ -57,6 +59,7 @@ class AdminCategoriesController extends Controller
                         $object->bg_image = null;
                     }
                 }
+
                 if($request->hasFile('icon_image')) {
                     $helpers->deleteOldFile($object->icon_image, $type);
                     $newFileName = $helpers->uploadNewFile($request, 'icon_image', $type);
